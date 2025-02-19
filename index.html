@@ -35,24 +35,97 @@
         </ul>
     </section>
     
-    <section>
-        <h2>Methods</h2>
-        <ul>
-            <li>✅ 3+ Data Preprocessing Methods Identified</li>
-            <li>Extract Optum EHR data, including demographics, diagnoses, medications, and lab results.</li>
-            <li>Incorporate additional datasets:
-                <ul>
-                    <li>CDC Social Vulnerability Index (SVI): Measures income, education, and housing quality.</li>
-                    <li>American Community Survey (ACS): Provides census-based socioeconomic indicators.</li>
-                    <li>EPA Air Quality Data: Includes pollutant levels (PM2.5, NO₂) at ZIP code or county level.</li>
-                    <li>NASA/Sentinel-5P: Integrates satellite-based pollution data.</li>
-                </ul>
-            </li>
-            <li>Link patient ZIP codes with socioeconomic and environmental data, applying imputation for missing values.</li>
-            
-            <li>✅ 3+ ML Algorithms/Models Identified</li>
-        </ul>
-    </section>
+    <div class="section">
+            <h2>1. Data Integration and Preprocessing</h2>
+            <h3>Data Extraction and Linking</h3>
+            <ul>
+                <li>Extract Optum EHR data, including demographics, diagnoses, medications, and lab results.</li>
+                <li>Incorporate additional datasets:
+                    <ul>
+                        <li>CDC Social Vulnerability Index (SVI): Measures income, education, and housing quality.</li>
+                        <li>American Community Survey (ACS): Provides census-based socioeconomic indicators.</li>
+                        <li>EPA Air Quality Data: Includes pollutant levels (PM2.5, NO₂) at ZIP code or county level.</li>
+                        <li>NASA/Sentinel-5P: Integrates satellite-based pollution data.</li>
+                    </ul>
+                </li>
+                <li>Link patient ZIP codes with socioeconomic and environmental data, applying imputation for missing values.</li>
+            </ul>
+
+            <h3>Data Cleaning and Transformation</h3>
+            <ul>
+                <li>Impute missing numerical values using <code>SimpleImputer</code> or <code>KNNImputer</code>.</li>
+                <li>Handle categorical variables using one-hot or ordinal encoding.</li>
+                <li>Detect and process outliers using <code>IsolationForest</code> or IQR-based methods.</li>
+                <li>Normalize continuous variables such as air pollution levels for consistency.</li>
+            </ul>
+
+            <h3>Feature Engineering</h3>
+            <ul>
+                <li>Create composite indices for related variables.</li>
+                <li>Introduce temporal features to track health and environmental exposure changes.</li>
+                <li>Develop interaction terms (e.g., smoking × pollution exposure).</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>2. Unsupervised Learning</h2>
+            <h3>Clustering (K-Means)</h3>
+            <ul>
+                <li>Group patients based on clinical, socioeconomic, and environmental factors.</li>
+                <li>Identify risk subpopulations for targeted interventions.</li>
+            </ul>
+
+            <h3>Dimensionality Reduction (PCA)</h3>
+            <ul>
+                <li>Apply PCA to reduce feature dimensionality and improve efficiency.</li>
+                <li>Mitigate multicollinearity among socioeconomic and environmental features.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>3. Supervised Learning</h2>
+            <h3>Model Selection</h3>
+            <ul>
+                <li>Use **Regularized Logistic Regression** for interpretability and handling high-dimensional data.</li>
+                <li>Apply **Ensemble Methods (Random Forest, XGBoost)** to capture nonlinear relationships.</li>
+            </ul>
+
+            <h3>Model Training and Validation</h3>
+            <ul>
+                <li>Split data into training and testing sets, using cross-validation where necessary.</li>
+                <li>Evaluate models using:
+                    <ul>
+                        <li>AUC-ROC and Precision-Recall Curves for classification performance.</li>
+                        <li>Calibration plots and Brier scores for probability estimation accuracy.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Interpretability and Feature Importance</h3>
+            <ul>
+                <li>Analyze feature importance using tree-based models.</li>
+                <li>Use SHAP values for model explainability at both global and individual levels.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. Bias and Fairness Checks</h2>
+            <h3>Subgroup Performance Analysis</h3>
+            <ul>
+                <li>Measure AUC and other metrics across different demographic groups.</li>
+            </ul>
+
+            <h3>Fairness Metrics</h3>
+            <ul>
+                <li>Apply cross-AUC (xAUC) and disparity analysis to detect bias.</li>
+            </ul>
+
+            <h3>Bias Mitigation Strategies</h3>
+            <ul>
+                <li>Use reweighting or subgroup recalibration if disparities are detected.</li>
+            </ul>
+        </div>
+    </div>
     
     <section>
         <h2>(Potential) Results and Discussion</h2>
