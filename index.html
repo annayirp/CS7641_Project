@@ -20,8 +20,23 @@
         <h2>Introduction/Background</h2>
         <ul>
             <li>✅ Literature Review</li>
+            <p>After analyzing existing approaches to this problem, many machine learning algorithms use “EHR” data as the training set. EHR stands for electronic health record, and is a digital store of a patients’ medical history over time. This data is used within and between different hospitals to get the most up to date picture on how a patient is doing. Consequently, all the data which is contained in a dataset containing many EHRs is a viable source of training data for healthcare diagnostics.
+              <br/><br/>
+              The relevant paper (1) utilize Optum’s EHR database to train their models, with the purpose of predicting risk of lung cancer. This dataset seems to provide a complete time-series data of EHRs, with many different features, such as diagnostics, lab results, immunizations, and prior medical history. Alternate studies done using this dataset is one which aimed to measure and define “post-COVID conditions” (2). 
+              <br/><br/>
+              While this is a powerful dataset, it is not available for use for free, and we are going to reach out to the Optum team to discuss potential options of working with their dataset or a slice of it.
+              <br/><br/>
+              Searching for alternatives presented us with MIMIC-IV, another EHR dataset which contains both hospital wide EHR, and ICU specific information (3). This is another candidate for a training data set</p>
+
             <li>✅ Dataset Description</li>
+            <p>In general, our dataset should consist of EHRs. https://ohdsi.github.io/ETL-LambdaBuilder/ consists of the data mapping which another project made using Optum data. From this, we can see many different tables and features we can work with. 
+              <br/><br/>
+              Things relevant for the purposes of lung cancer detection could be previous diagnoses, death date after lung cancer detection, diet/existing health concerns, and lab data such as blood cell count, immunization, and many more factors. 
+              <br/><br/>
+              The MIMIC-IV dataset is documented at https://physionet.org/content/mimic-iv-demo/2.2/. This has similar features we could use. Some others in this one include prescriptions, microbiology tables, and lab history. These sets provide a large set of initial training data to work with.</p>
             <li>✅ Dataset Link (if applicable)</li>
+            <p>Optum: <a href="https://business.optum.com/en/data-analytics/life-sciences/real-world-data/ehr-data.html">https://business.optum.com/en/data-analytics/life-sciences/real-world-data/ehr-data.html</a></p>
+            <p>MIMIC-IV: <a href="https://physionet.org/content/mimiciv/3.1/">https://physionet.org/content/mimiciv/3.1/</a></p>            
         </ul>
     </section>
     
@@ -122,6 +137,9 @@
         <h2>References</h2>
         <ul>
             <li>✅ 3+ References (IEEE format)</li>
+            <p>1. https://pmc.ncbi.nlm.nih.gov/articles/PMC9986687/</p>
+            <p>2. https://pmc.ncbi.nlm.nih.gov/articles/PMC10997091/</p>
+            <p>3. https://www.nature.com/articles/s41597-022-01899-x</p>
             <li>✅ 1+ In-Text Citation Per Reference</li>
         </ul>
     </section>
